@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-server
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      run: fastapi-server
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        run: fastapi-server
+    spec:
+      containers:
+      - name: fastapi-server
+        image: onboarding-socar-server
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: config-prod
+        volumeMounts:
+        - name: log-volume
+          mountPath: /app/socar-de-onbarding/volumes
+      volumes:
+      - name: log-volume
+        persistentVolumeClaim:
+          claimName: log-pvc

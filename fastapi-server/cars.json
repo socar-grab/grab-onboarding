@@ -1,0 +1,14 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "name": "BMW",
+      "image_url": "https://www.bmw.co.kr/content/dam/bmw/common/home/teaser/bmw-i4-mini-hometeaser-1680x756.jpg"
+    },
+    {
+      "id": 2,
+      "name": "테슬라",
+      "image_url": "https://i.pinimg.com/originals/5f/4e/73/5f4e7346f59157c3d1718e8a15491ba2.jpg"
+    }
+  ]
+}
